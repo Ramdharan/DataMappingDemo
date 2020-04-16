@@ -1,0 +1,30 @@
+
+type GlobalData{
+	id:ID!
+	createdDate: String
+   	fieldName: String!
+   	fieldType: String
+   	
+}
+
+
+type USA {
+   id:ID!
+   fieldFormat: String
+   fieldName: String!
+   fieldType: String
+   isEqual:GlobalData
+   
+}
+
+ type Query{
+	getAllUSAData:[USA]
+	USA(id:ID!):USA
+	getAllGlobalData:[GlobalData]
+	GlobalData(id:ID!):GlobalData
+	setUSARelationShip(usaId:Long,globalID:Long):USA
+	
+}
+type Mutation{
+	createUSA(fieldName:String!,fieldFormat:String,fieldType:String):USA
+}
